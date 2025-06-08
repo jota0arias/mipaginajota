@@ -1,0 +1,148 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+}
+
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contenedor {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+/* Primera página */
+.svg-title {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.svg-title text {
+  fill: #00f0ff;
+  stroke: #00f0ff;
+  stroke-width: 3px;
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: drawText 4s linear infinite, glow 1.5s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 10px #00f0ff) drop-shadow(0 0 30px #000);
+}
+
+@keyframes drawText {
+  0% {
+    stroke-dashoffset: 2000;
+    stroke: #00f0ff;
+  }
+  50% {
+    stroke-dashoffset: 0;
+    stroke: #000;
+  }
+  100% {
+    stroke-dashoffset: -2000;
+    stroke: #00f0ff;
+  }
+}
+
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 5px #00f0ff) drop-shadow(0 0 30px #000);
+  }
+  100% {
+    filter: drop-shadow(0 0 20px #00f0ff) drop-shadow(0 0 40px #000);
+  }
+}
+
+#botonMostrarCiervo {
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  background-color: #0ff;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 20px #00f0ff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 2;
+  position: relative;
+}
+
+#botonMostrarCiervo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 40px #00f0ff;
+}
+
+/* --- Para la frase junto a la imagen en ingeniera.html --- */
+.imagen-texto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+}
+
+.imagen-texto img {
+  max-width: 400px;
+  filter: drop-shadow(0 0 30px #00f0ff);
+}
+
+.frase {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #00f0ff;
+  text-shadow:
+    0 0 5px #00f0ff,
+    0 0 10px #00f0ff,
+    0 0 20px #00f0ff,
+    0 0 40px #00f0ff;
+  animation: parpadeo 2s infinite alternate ease-in-out;
+  max-width: 350px;
+}
+
+@keyframes parpadeo {
+  0% {
+    opacity: 0.6;
+    text-shadow:
+      0 0 5px #00f0ff,
+      0 0 10px #00f0ff,
+      0 0 20px #00f0ff,
+      0 0 40px #00f0ff;
+  }
+  50% {
+    opacity: 1;
+    text-shadow:
+      0 0 10px #00ffff,
+      0 0 20px #00ffff,
+      0 0 30px #00ffff,
+      0 0 60px #00ffff;
+  }
+  100% {
+    opacity: 0.6;
+    text-shadow:
+      0 0 5px #00f0ff,
+      0 0 10px #00f0ff,
+      0 0 20px #00f0ff,
+      0 0 40px #00f0ff;
+  }
+}
